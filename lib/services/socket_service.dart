@@ -30,6 +30,25 @@ class SocketService {
     ]
   };
 
+  static Map<String, dynamic> requestTwo() => {
+    "type": "subscribe",
+    "product_ids": [
+      "ETH-USD",
+      "ETH-EUR"
+    ],
+    "channels": [
+      // "level2",
+      "heartbeat",
+      // {
+      //   "name": "ticker",
+      //   "product_ids": [
+      //     "ETH-BTC",
+      //     "ETH-USD"
+      //   ]
+      // }
+    ]
+  };
+
   static TickerModel parseRequest(String json) {
     return TickerModel.fromJson(jsonDecode(json));
   }

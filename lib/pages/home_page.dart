@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    SocketService.connect(SocketService.request());
+    SocketService.connect(SocketService.requestTwo());
   }
 
   @override
@@ -27,11 +27,11 @@ class _HomePageState extends State<HomePage> {
         builder: (context, snapshot) {
           if(snapshot.hasData) {
             print(snapshot.data);
-            var model = SocketService.parseRequest(snapshot.data as String);
+            // var model = SocketService.parseRequest(snapshot.data as String);
             return Center(
               child: Column(
                 children: [
-                  Text("ETH-EUR: ${model.price}"),
+                  Text("ETH-EUR: ${"model.price"}"),
                 ],
               ),
             );
