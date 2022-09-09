@@ -34,18 +34,12 @@ class SocketService {
     "type": "subscribe",
     "product_ids": [
       "ETH-USD",
-      "ETH-EUR"
+      // "ETH-EUR"
     ],
     "channels": [
-      // "level2",
-      "heartbeat",
-      // {
-      //   "name": "ticker",
-      //   "product_ids": [
-      //     "ETH-BTC",
-      //     "ETH-USD"
-      //   ]
-      // }
+      "level2",
+      // "heartbeat",
+      // "ticker",
     ]
   };
 

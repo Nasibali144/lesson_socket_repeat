@@ -8,12 +8,12 @@ class LevelTwo {
   LevelTwo.fromJson(Map json) {
     type = json['type'];
     productId = json['product_id'];
-    changes = json['changes'] != null ? json['changes'].cast<String>() : [];
+    changes = json['changes'];
     time = json['time'];
   }
   String? type;
   String? productId;
-  List<List<String>>? changes;
+  List? changes;
   String? time;
 
   Map<String, dynamic> toJson() {

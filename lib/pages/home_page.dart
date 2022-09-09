@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:lesson_socket_repeat/models/level_two.dart';
 import 'package:lesson_socket_repeat/services/socket_service.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,12 +30,16 @@ class _HomePageState extends State<HomePage> {
         builder: (context, snapshot) {
           if(snapshot.hasData) {
             print(snapshot.data);
-            // var model = SocketService.parseRequest(snapshot.data as String);
+            // var model = ParsingModel.fromJson(snapshot.data as String);
+            var model = LevelTwo.fromJson(jsonDecode(snapshot.data as String));
             return Center(
-              child: Column(
-                children: [
-                  Text("ETH-EUR: ${"model.price"}"),
-                ],
+              child: Text(
+                "ETH-USD: ${model.changes}",
+                style: const TextStyle(
+                  fontSize: 40,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             );
           }
